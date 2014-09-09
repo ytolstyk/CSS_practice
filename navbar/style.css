@@ -1,5 +1,5 @@
 * {
-  border: solid thin blue;
+/*  border: solid thin blue;*/
   font-family: sans-serif;
   padding: 0;
   margin: 0;
@@ -10,17 +10,40 @@ body {
   background-color:lightgrey;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  background-color: grey;
+  margin-top: 5px;
+  margin-left: -12px;
+  padding: 0;
+  list-style: none;
+}
+
+
+/*NAVBAR*/
+
 .navbar-wrapper {
   background-color: red;
-  border-bottom: solid thin black;
+  border-bottom: solid black;
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
 .number {
-  border-radius: 50% 50%;
-  background-color: black;
+  display: inline;
+  border-radius: 50%;
+  background-color: #333;  
+  padding: 2px;
+}
+
+.nav-hover:hover .number {
+  background: red;
 }
 
 .navbar {
@@ -41,23 +64,57 @@ body {
 .nav-item {
   float: right;
   padding: 5px 10px;
+  border-left: solid black;
 }
 
+.navbar:first-child {
+  border-left: solid black;
+  
+}
 
-.clearfix::after {
-  content: "";
-  clear: both;
+.navbar:last-child {
+  border-right: solid black;
+}
+
+.nav-hover {
+  
+}
+
+.nav-hover:hover {
+  background-color: #333;
+}
+
+.nav-hover:hover .nav-item-dropdown {
   display: block;
 }
+
+.dropdown-item {
+  padding: 5px;
+  border: thin solid black;
+}
+
+.nav-item-dropdown {
+  position: absolute;
+  color: black;
+  background-color: lightgrey;
+  border: thin solid black;
+  display: none;
+}
+
+/*MAIN CONTENT*/
 
 .content {
   width: 70%;
   margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: white;
+  border: solid #AAA;
+  border-top: none;
 }
 
 .col-right {
-  padding: 30px;
+  padding: 0 30px;
   float: right;
   width: 70%;
 }
@@ -65,8 +122,11 @@ body {
 .col-left {
   float: left;
   width: 30%;
-  padding: 30px;
+  padding: 0 30px;
+  border-right: 2px solid grey;
 }
+
+/*FOOTER*/
 
 .footer-wrapper {
   
@@ -83,8 +143,8 @@ body {
   background-color: #DDD;
   color: #666;
   padding: 5px;
-  vertical-align: middle;
-  line-height: ;
+  border: solid #AAA;
+  margin-top: -5px;
 }
 
 .footer-right {
